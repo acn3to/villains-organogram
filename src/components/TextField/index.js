@@ -6,7 +6,11 @@ const TextField = (props) => {
   return (
     <div className="text-field">
       <label htmlFor="">{props.label}</label>
-      <input type="text" placeholder={props.placeholder} />
+      <input
+        type="text"
+        required={props.required}
+        placeholder={props.placeholder}
+      />
     </div>
   )
 }

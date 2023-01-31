@@ -2,9 +2,10 @@ import './Form.css'
 
 import React from 'react'
 
+import Button from '../Button'
+import Dropdown from '../Dropdown'
 import TextArea from '../TextArea'
 import TextField from '../TextField'
-import Dropdown from '../Dropdown'
 
 const Form = () => {
   const animes = [
@@ -16,13 +17,23 @@ const Form = () => {
     'Boku no Hero Academia',
   ]
 
+  const onSave = (event) => {
+    event.preventDefault()
+    console.log('Submited...')
+  }
+
   return (
     <section className="form">
-      <form action="">
+      <form onSubmit={onSave}>
         <h2>Preencha os dados para criar o card do vilão</h2>
-        <TextField label="Nome" placeholder="Digite o nome do vilão" />
+        <TextField
+          required={true}
+          label="Nome"
+          placeholder="Digite o nome do vilão"
+        />
         <TextField label="Imagem" placeholder="Digite o endereço da imagem" />
         <TextField
+          required={true}
           label="Organização"
           placeholder="Digite o nome da organização"
         />
@@ -34,6 +45,7 @@ const Form = () => {
           cols="50"
           rows="4"
         />
+        <Button>Criar card</Button>
       </form>
     </section>
   )
