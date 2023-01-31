@@ -19,7 +19,6 @@ const Form = () => {
 
   const onSave = (event) => {
     event.preventDefault()
-    console.log('Submited...')
   }
 
   return (
