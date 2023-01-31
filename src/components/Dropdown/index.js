@@ -1,5 +1,6 @@
-import React from 'react'
 import './Dropdown.css'
+
+import React from 'react'
 
 const Dropdown = (props) => {
   console.log(props.itens)
