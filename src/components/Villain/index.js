@@ -2,15 +2,16 @@ import './Villain.css'
 
 import React from 'react'
 
-const Villain = () => {
+const Villain = (props) => {
   return (
     <div className="villain">
       <div className="header">
-        <img src="http://github.com/acn3to.png" alt="Arnaldo" />
+        <img src={props.image} alt={props.name} />
       </div>
       <div className="footer">
-        <h4>Arnaldo Neto</h4>
-        <h5>Desenvolvedor</h5>
+        <h4>{props.name}</h4>
+        <h5>Organização: {props.organisation}</h5>
+        <p>{props.description}</p>
       </div>
     </div>
   )

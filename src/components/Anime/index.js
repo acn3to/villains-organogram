@@ -10,7 +10,16 @@ const Anime = (props) => {
       style={{ backgroundColor: props.secondaryColor }}
     >
       <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
-      <Villain />
+      <div className="villains">
+        {props.villain.map((villain) => (
+          <Villain
+            name={villain.name}
+            image={villain.image}
+            organisation={villain.organisation}
+            description={villain.description}
+          />
+        ))}
+      </div>
     </section>
   )
 }

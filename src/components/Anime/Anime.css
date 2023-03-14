@@ -13,3 +13,11 @@
 
 	border-bottom: 4px solid;
 }
+
+.anime .villains {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	margin-top: 32px;
+}
