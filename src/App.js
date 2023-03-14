@@ -54,7 +54,7 @@ function App() {
           name={anime.name}
           primaryColor={anime.primaryColor}
           secondaryColor={anime.secondaryColor}
-          villain={villains.filter((villain) => villain.anime === anime.name)}
+          villains={villains.filter((villain) => villain.anime === anime.name)}
         />
       ))}
     </div>

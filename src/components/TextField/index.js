@@ -2,20 +2,20 @@ import './TextField.css'
 
 import React from 'react'
 
-const TextField = (props) => {
+const TextField = ({ onChange, label, inputValue, required, placeholder }) => {
   const onTyping = (event) => {
-    props.onChange(event.target.value)
+    onChange(event.target.value)
   }
 
   return (
     <div className="text-field">
-      <label htmlFor="">{props.label}</label>
+      <label htmlFor="">{label}</label>
       <input
         type="text"
-        value={props.inputValue}
+        value={inputValue}
         onChange={onTyping}
-        required={props.required}
-        placeholder={props.placeholder}
+        required={required}
+        placeholder={placeholder}
       />
     </div>
   )

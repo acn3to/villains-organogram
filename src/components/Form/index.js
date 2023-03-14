@@ -7,7 +7,7 @@ import Dropdown from '../Dropdown'
 import TextArea from '../TextArea'
 import TextField from '../TextField'
 
-const Form = (props) => {
+const Form = ({ onVillainRegistered }) => {
   const animes = [
     'Naruto',
     'Dragon Ball Z',
@@ -25,7 +25,7 @@ const Form = (props) => {
 
   const onSave = (event) => {
     event.preventDefault()
-    props.onVillainRegistered({
+    onVillainRegistered({
       name,
       image,
       organisation,

@@ -2,16 +2,16 @@ import './Dropdown.css'
 
 import React from 'react'
 
-const Dropdown = (props) => {
+const Dropdown = ({ label, onChange, required, value, itens }) => {
   return (
     <div className="dropdown">
-      <label htmlFor="">{props.label}</label>
+      <label htmlFor="">{label}</label>
       <select
-        onChange={(event) => props.onChange(event.target.value)}
-        required={props.required}
-        value={props.value}
+        onChange={(event) => onChange(event.target.value)}
+        required={required}
+        value={value}
       >
-        {props.itens.map((item) => (
+        {itens.map((item) => (
           <option key={item}>{item}</option>
         ))}
       </select>

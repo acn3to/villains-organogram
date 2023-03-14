@@ -3,17 +3,15 @@ import './Anime.css'
 
 import React from 'react'
 
-const Anime = (props) => {
+const Anime = ({ villains, name, primaryColor, secondaryColor }) => {
   return (
-    props.villain.length > 0 && (
-      <section
-        className="anime"
-        style={{ backgroundColor: props.secondaryColor }}
-      >
-        <h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
+    villains.length > 0 && (
+      <section className="anime" style={{ backgroundColor: secondaryColor }}>
+        <h3 style={{ borderColor: primaryColor }}>{name}</h3>
         <div className="villains">
-          {props.villain.map((villain) => (
+          {villains.map((villain) => (
             <Villain
+              key={villain.name}
               name={villain.name}
               image={villain.image}
               organisation={villain.organisation}
