@@ -32,6 +32,10 @@ const Form = (props) => {
       anime,
       description,
     })
+    setName('')
+    setImage('')
+    setOrganisation('')
+    setDescription('')
   }
 
   return (
