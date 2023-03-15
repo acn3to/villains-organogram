@@ -9,7 +9,7 @@ const TextField = ({ onChange, label, inputValue, required, placeholder }) => {
 
   return (
     <div className="text-field">
-      <label htmlFor="">{label}</label>
+      <label>{label}</label>
       <input
         type="text"
         value={inputValue}

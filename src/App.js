@@ -47,7 +47,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Form onVillainRegistered={onNewVillain} />
+      <Form onVillainRegistered={onNewVillain} animes={animes} />
       {animes.map((anime) => (
         <Anime
           key={anime.name}

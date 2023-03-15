@@ -2,20 +2,20 @@ import './TextArea.css'
 
 import React from 'react'
 
-const TextArea = ({ onChange, label, name, id, cols, rows }) => {
+const TextArea = ({ onChange, label, name, id, rows, inputValue }) => {
   const onTyping = (event) => {
     onChange(event.target.value)
   }
 
   return (
     <div className="text-area">
-      <label htmlFor="">{label}</label>
+      <label>{label}</label>
       <textarea
         name={name}
         id={id}
-        cols={cols}
         rows={rows}
         onChange={onTyping}
+        value={inputValue}
       ></textarea>
     </div>
   )

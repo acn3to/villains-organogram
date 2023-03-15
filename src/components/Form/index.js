@@ -7,16 +7,7 @@ import Dropdown from '../Dropdown'
 import TextArea from '../TextArea'
 import TextField from '../TextField'
 
-const Form = ({ onVillainRegistered }) => {
-  const animes = [
-    'Naruto',
-    'Dragon Ball Z',
-    'One Piece',
-    'Bleach',
-    'Full Metal Alchemist',
-    'Boku no Hero Academia',
-  ]
-
+const Form = ({ onVillainRegistered, animes }) => {
   const [name, setName] = useState('')
   const [image, setImage] = useState('')
   const [organisation, setOrganisation] = useState('')
@@ -35,6 +26,7 @@ const Form = ({ onVillainRegistered }) => {
     setName('')
     setImage('')
     setOrganisation('')
+    setAnime('')
     setDescription('')
   }
 
@@ -46,25 +38,25 @@ const Form = ({ onVillainRegistered }) => {
           required={true}
           label="Nome"
           placeholder="Digite o nome do vilão"
-          value={name}
+          inputValue={name}
           onChange={(value) => setName(value)}
         />
         <TextField
           label="Imagem"
           placeholder="Digite o endereço da imagem"
-          value={image}
+          inputValue={image}
           onChange={(value) => setImage(value)}
         />
         <TextField
           required={true}
           label="Organização"
           placeholder="Digite o nome da organização"
-          value={organisation}
+          inputValue={organisation}
           onChange={(value) => setOrganisation(value)}
         />
         <Dropdown
           label="Anime"
-          itens={animes}
+          items={animes}
           value={anime}
           onChange={(value) => setAnime(value)}
         />
@@ -72,10 +64,9 @@ const Form = ({ onVillainRegistered }) => {
           label="Descrição"
           name="Description"
           id="description"
-          cols="50"
           rows="4"
           type="text"
-          value={description}
+          inputValue={description}
           onChange={(value) => setDescription(value)}
         />
         <Button>Criar card</Button>

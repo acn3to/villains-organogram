@@ -1,7 +1,8 @@
-import Villain from '../Villain'
 import './Anime.css'
 
 import React from 'react'
+
+import Villain from '../Villain'
 
 const Anime = ({ villains, name, primaryColor, secondaryColor }) => {
   return (
@@ -11,6 +12,7 @@ const Anime = ({ villains, name, primaryColor, secondaryColor }) => {
         <div className="villains">
           {villains.map((villain) => (
             <Villain
+              backgroundColor={primaryColor}
               key={villain.name}
               name={villain.name}
               image={villain.image}

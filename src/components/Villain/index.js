@@ -2,10 +2,16 @@ import './Villain.css'
 
 import React from 'react'
 
-const Villain = ({ name, image, organisation, description }) => {
+const Villain = ({
+  name,
+  image,
+  organisation,
+  description,
+  backgroundColor,
+}) => {
   return (
     <div className="villain">
-      <div className="header">
+      <div className="header" style={{ backgroundColor: backgroundColor }}>
         <img src={image} alt={name} />
       </div>
       <div className="footer">
