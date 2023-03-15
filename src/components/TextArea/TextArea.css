@@ -4,17 +4,28 @@
 
 .text-area label {
 	display: block;
+
 	margin-bottom: 8px;
+
 	font-size: 24px;
 }
 
 .text-area textarea {
+	box-sizing: border-box;
+
+	padding: 24px;
+	width: 100%;
+
 	background-color: #fff;
 	box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
-	width: 100%;
 	border: none;
 	font-size: 24px;
-	padding: 24px;
-	box-sizing: border-box;
 	resize: none;
+}
+
+@media (max-width: 688px) {
+	.text-area label,
+	.text-area textarea {
+		font-size: 16px;
+	}
 }

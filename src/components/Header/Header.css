@@ -2,13 +2,16 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-image: url('/public/images/banner.png');
-	background-size: cover;
+
 	height: 30vw;
 	max-height: 100%;
 	width: 100vw;
 	max-width: 100%;
+
 	font-family: 'Open Sans', sans-serif;
+
+	background-image: url('/public/images/banner.png');
+	background-size: cover;
 }
 
 h1 {
@@ -25,6 +28,13 @@ h3 {
 .banner h1,
 .banner h3 {
 	margin: 0;
+
 	text-shadow: 2px 2px 6px #fe2527;
 	text-align: center;
+}
+
+@media (max-width: 688px) {
+	.banner {
+		height: 40vh;
+	}
 }
