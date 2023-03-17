@@ -1,0 +1,35 @@
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 80px;
+
+	background: #97a3e7;
+	color: #fff;
+}
+
+.footer ul li {
+	display: inline-block;
+	margin-right: 32px;
+}
+
+.footer ul li:last-child {
+	margin-right: 0;
+}
+
+@media (max-width: 688px) {
+	.footer {
+		flex-direction: column-reverse;
+		gap: 24px;
+		padding: 48px 24px;
+	}
+
+	.footer ul {
+		display: flex;
+		gap: 16px;
+
+		margin: 0;
+		padding: 0;
+	}
+}

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Anime from './components/Anime'
 import Form from './components/Form'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 function App() {
   const animes = [
@@ -57,6 +58,7 @@ function App() {
           villains={villains.filter((villain) => villain.anime === anime.name)}
         />
       ))}
+      <Footer />
     </div>
   )
 }
