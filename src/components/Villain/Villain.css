@@ -1,4 +1,6 @@
 .villain {
+	position: relative;
+
 	width: 280px;
 	margin-bottom: 64px;
 }
@@ -16,7 +18,7 @@
 	border-radius: 50%;
 }
 
-.villain .footer {
+.villain .description {
 	padding-top: 60px;
 	padding-bottom: 40px;
 
@@ -25,7 +27,7 @@
 	border-radius: 0px 0px 10px 10px;
 }
 
-.villain .footer h4 {
+.villain .description h4 {
 	margin-bottom: 8px;
 
 	color: #6278f7;
@@ -34,7 +36,7 @@
 	font-weight: bold;
 }
 
-.villain .footer h5 {
+.villain .description h5 {
 	padding: 0 16px;
 
 	font-size: 18px;
@@ -42,9 +44,15 @@
 	color: #212121;
 }
 
-.villain .footer p {
+.villain .description p {
 	margin: 0 24px;
 
 	text-align: justify;
 	font-size: 14px;
+}
+
+.delete {
+	position: absolute;
+	right: -10px;
+	top: -10px;
 }
