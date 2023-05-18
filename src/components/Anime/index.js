@@ -10,18 +10,18 @@ const Anime = ({ villains, anime, onDelete, changeColor }) => {
 		villains.length > 0 && (
 			<section className="anime" style={{ backgroundColor: hexToRgba(anime.color, '0.6') }}>
 				<input
-					onChange={(e) => changeColor(e.target.value, anime.name)}
+					onChange={(e) => changeColor(e.target.value, anime.id)}
 					value={anime.color}
 					type="color"
 					className="input-color"
 				/>
 				<h3 style={{ borderColor: anime.color }}>{anime.name}</h3>
 				<div className="villains">
-					{villains.map((villain, index) => {
+					{villains.map((villain) => {
 						return (
 							<Villain
 								backgroundColor={anime.color}
-								key={index}
+								key={villain.id}
 								villain={villain}
 								onDelete={onDelete}
 							/>

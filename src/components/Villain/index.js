@@ -6,7 +6,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 const Villain = ({ villain, backgroundColor, onDelete }) => {
 	return (
 		<div className="villain">
-			<AiFillCloseCircle size={25} className="delete" onClick={onDelete} />
+			<AiFillCloseCircle size={25} className="delete" onClick={() => onDelete(villain.id)} />
 			<div className="header" style={{ backgroundColor: backgroundColor }}>
 				<img src={villain.image} alt={villain.name} />
 			</div>

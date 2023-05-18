@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import Anime from './components/Anime';
 import Footer from './components/Footer';
@@ -8,29 +9,15 @@ import Header from './components/Header';
 function App() {
 	const [animes, setAnimes] = useState([
 		{
+			id: uuidv4(),
 			name: 'Naruto',
 			color: '#F6AD22',
 		},
-		{
-			name: 'Dragon Ball Z',
-			color: '#F6E100',
-		},
-		{
-			name: 'One Piece',
-			color: '#CC4853',
-		},
-		{
-			name: 'Bleach',
-			color: '#F1A959',
-		},
-		{
-			name: 'Full Metal Alchemist',
-			color: '#A20B0B',
-		},
-		{
-			name: 'Boku no Hero Academia',
-			color: '#1B54D9',
-		},
+		{ id: uuidv4(), name: 'Dragon Ball Z', color: '#F6E100' },
+		{ id: uuidv4(), name: 'One Piece', color: '#CC4853' },
+		{ id: uuidv4(), name: 'Bleach', color: '#F1A959' },
+		{ id: uuidv4(), name: 'Full Metal Alchemist', color: '#A20B0B' },
+		{ id: uuidv4(), name: 'Boku no Hero Academia', color: '#1B54D9' },
 	]);
 
 	const [villains, setVillains] = useState([]);
@@ -39,14 +26,14 @@ function App() {
 		setVillains([...villains, villain]);
 	};
 
-	const handleDeleteVillain = () => {
-		console.log('deleteVillain called');
+	const handleDeleteVillain = (id) => {
+		setVillains(villains.filter((villain) => villain.id !== id));
 	};
 
-	const handleChangeAnimeColor = (color, name) => {
+	const handleChangeAnimeColor = (color, id) => {
 		setAnimes(
 			animes.map((anime) => {
-				if (anime.name === name) {
+				if (anime.id === id) {
 					anime.color = color;
 				}
 				return anime;

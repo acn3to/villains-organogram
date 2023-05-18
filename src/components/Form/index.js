@@ -1,6 +1,7 @@
 import './Form.css';
 
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import Button from '../Button';
 import Dropdown from '../Dropdown';
@@ -16,20 +17,20 @@ const Form = ({ onVillainRegistered, animes }) => {
 
 	const onSave = (event) => {
 		event.preventDefault();
-		onVillainRegistered({
+		const newVillain = {
+			id: uuidv4(),
 			name,
 			image,
 			organisation,
 			anime,
 			description,
-		});
+		};
+		onVillainRegistered(newVillain);
 		setName('');
 		setImage('');
 		setOrganisation('');
 		setAnime('');
 		setDescription('');
-
-		console.log(name, image, description, organisation, anime);
 	};
 
 	return (
