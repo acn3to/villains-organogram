@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 import Button from '../Button';
 import Dropdown from '../Dropdown';
-import TextArea from '../TextArea';
 import Field from '../Field';
+import TextArea from '../TextArea';
 
 const Form = ({ onVillainRegistered, animes, createAnime }) => {
 	const [name, setName] = useState('');
@@ -21,6 +21,7 @@ const Form = ({ onVillainRegistered, animes, createAnime }) => {
 		event.preventDefault();
 		const newVillain = {
 			id: uuidv4(),
+			favorite: false,
 			name,
 			image,
 			organisation,

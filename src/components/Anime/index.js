@@ -5,7 +5,7 @@ import React from 'react';
 
 import Villain from '../Villain';
 
-const Anime = ({ villains, anime, onDelete, changeColor }) => {
+const Anime = ({ villains, anime, onDelete, changeColor, onFavorite }) => {
 	return (
 		villains.length > 0 && (
 			<section className="anime" style={{ backgroundColor: hexToRgba(anime.color, '0.6') }}>
@@ -24,6 +24,7 @@ const Anime = ({ villains, anime, onDelete, changeColor }) => {
 								key={villain.id}
 								villain={villain}
 								onDelete={onDelete}
+								onFavorite={onFavorite}
 							/>
 						);
 					})}

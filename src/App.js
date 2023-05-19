@@ -45,6 +45,15 @@ function App() {
 		setAnimes([...animes, { ...newAnime, id: uuidv4() }]);
 	};
 
+	const handleFavorite = (id) => {
+		setVillains(
+			villains.map((villain) => {
+				if (villain.id === id) villain.favorite = !villain.favorite;
+				return villain;
+			}),
+		);
+	};
+
 	return (
 		<div className="App">
 			<Header />
@@ -60,6 +69,7 @@ function App() {
 					villains={villains.filter((villain) => villain.anime === anime.name)}
 					onDelete={handleDeleteVillain}
 					changeColor={handleChangeAnimeColor}
+					onFavorite={handleFavorite}
 				/>
 			))}
 			<Footer />
