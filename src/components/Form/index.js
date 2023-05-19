@@ -6,14 +6,16 @@ import { v4 as uuidv4 } from 'uuid';
 import Button from '../Button';
 import Dropdown from '../Dropdown';
 import TextArea from '../TextArea';
-import TextField from '../TextField';
+import Field from '../Field';
 
-const Form = ({ onVillainRegistered, animes }) => {
+const Form = ({ onVillainRegistered, animes, createAnime }) => {
 	const [name, setName] = useState('');
 	const [image, setImage] = useState('');
 	const [organisation, setOrganisation] = useState('');
 	const [anime, setAnime] = useState('');
 	const [description, setDescription] = useState('');
+	const [animeName, setAnimeName] = useState('');
+	const [animeColor, setAnimeColor] = useState('');
 
 	const onSave = (event) => {
 		event.preventDefault();
@@ -34,23 +36,23 @@ const Form = ({ onVillainRegistered, animes }) => {
 	};
 
 	return (
-		<section className="form">
+		<section className="form-container">
 			<form onSubmit={onSave}>
 				<h2>Preencha os dados para criar o card do vilão</h2>
-				<TextField
+				<Field
 					required={true}
 					label="Nome"
 					placeholder="Digite o nome do vilão"
 					inputValue={name}
 					onChange={(value) => setName(value)}
 				/>
-				<TextField
+				<Field
 					label="Imagem"
 					placeholder="Digite o endereço da imagem"
 					inputValue={image}
 					onChange={(value) => setImage(value)}
 				/>
-				<TextField
+				<Field
 					required={true}
 					label="Organização"
 					placeholder="Digite o nome da organização"
@@ -73,6 +75,30 @@ const Form = ({ onVillainRegistered, animes }) => {
 					onChange={(value) => setDescription(value)}
 				/>
 				<Button>Criar card</Button>
+			</form>
+			<form
+				onSubmit={(event) => {
+					event.preventDefault();
+					createAnime({ name: animeName, color: animeColor });
+				}}
+			>
+				<h2>Preencha os dados para criar um novo anime</h2>
+				<Field
+					required
+					label="Nome"
+					placeholder="Digite o nome do anime"
+					inputValue={animeName}
+					onChange={(value) => setAnimeName(value)}
+				/>
+				<Field
+					required
+					label="Cor"
+					type="color"
+					placeholder="Digite a cor do anime"
+					inputValue={animeColor}
+					onChange={(value) => setAnimeColor(value)}
+				/>
+				<Button>Criar um novo anime</Button>
 			</form>
 		</section>
 	);

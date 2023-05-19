@@ -41,10 +41,18 @@ function App() {
 		);
 	};
 
+	const handleCreateAnime = (newAnime) => {
+		setAnimes([...animes, { ...newAnime, id: uuidv4() }]);
+	};
+
 	return (
 		<div className="App">
 			<Header />
-			<Form onVillainRegistered={handleNewVillain} animes={animes} />
+			<Form
+				createAnime={handleCreateAnime}
+				onVillainRegistered={handleNewVillain}
+				animes={animes}
+			/>
 			{animes.map((anime) => (
 				<Anime
 					key={anime.name}

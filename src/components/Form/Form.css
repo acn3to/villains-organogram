@@ -1,20 +1,24 @@
-.form {
+.form-container {
 	display: flex;
+  gap: 1.25em;
+  flex-wrap: wrap;
 	justify-content: center;
-	margin: 80px 0;
+	margin: 5em 3.125em;
 
 	font-family: 'Open Sans', sans-serif;
 }
 
-.form form {
-	max-width: 80%;
-	padding: 36px 64px;
+.form-container form {  
+  flex: 1;
+	padding: 2.25em 4em;
+  
+  min-width: 35%;
 
 	background-color: #f2f2f2;
-	border-radius: 20px;
-	box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
+	border-radius: 1.25em;
+	box-shadow: 0.5em 0.5em 1em rgba(0, 0, 0, 0.08);
 }
 
-.form h2 {
+.form-container h2 {
 	text-align: center;
 }

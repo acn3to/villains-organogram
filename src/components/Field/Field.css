@@ -1,15 +1,15 @@
-.text-field {
+.field {
 	margin: 24px 0;
 }
 
-.text-field label {
+.field label {
 	display: block;
 	margin-bottom: 8px;
 
 	font-size: 24px;
 }
 
-.text-field input {
+.field input {
 	box-sizing: border-box;
 
 	padding: 24px;
@@ -22,9 +22,14 @@
 	border: none;
 }
 
+.field-color input {
+  height: 2.5em;
+  padding: 0.3125em 1.5em;
+}
+
 @media (max-width: 688px) {
-	.text-field label,
-	.text-field input {
+	.field label,
+	.field input {
 		font-size: 16px;
 	}
 }

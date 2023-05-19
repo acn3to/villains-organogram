@@ -1,17 +1,17 @@
-import './TextField.css';
+import './Field.css';
 
 import React from 'react';
 
-const TextField = ({ onChange, label, inputValue, required, placeholder }) => {
+const Field = ({ type = 'text', onChange, label, inputValue, required, placeholder }) => {
 	const onTyping = (event) => {
 		onChange(event.target.value);
 	};
 
 	return (
-		<div className="text-field">
+		<div className={`field field-${type}`}>
 			<label>{label}</label>
 			<input
-				type="text"
+				type={type}
 				value={inputValue}
 				onChange={onTyping}
 				required={required}
@@ -21,4 +21,4 @@ const TextField = ({ onChange, label, inputValue, required, placeholder }) => {
 	);
 };
 
-export default TextField;
+export default Field;
